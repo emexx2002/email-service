@@ -59,7 +59,7 @@ router.post("/send", (req, res, next) => {
 });
 const app = express();
 app.use(cors({
-    origin: ['https://emeka-dev.vercel.app', '*', 'http://localhost:3000']
+    origin: '*',
 }));
 app.use(express.json());
 app.use("/", router);
