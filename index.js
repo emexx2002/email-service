@@ -5,7 +5,6 @@ const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey('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')
 var cors = require("cors");
 const creds = require("./config");
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 router.post("/send", (req, res, next) => {
   var name = req.body.name;
@@ -13,7 +12,7 @@ router.post("/send", (req, res, next) => {
   var message = req.body.message;
   var content = `name: ${name} \n email: ${email} \n message: ${message} `;
   var mail = {
-    from: email,
+    from: '0x7lol@gmail.com',
     to: "aguchukwuemekag@gmail.com", // Change to email address that you want to receive messages on
     subject: "New Message from Contact Form",
     text: content,
