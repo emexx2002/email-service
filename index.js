@@ -1,10 +1,10 @@
 var express = require("express");
-require("dotenv").config();
 var router = express.Router();
 var nodemailer = require("nodemailer");
 const sgMail = require('@sendgrid/mail')
-sgMail.setApiKey(process.env.SENDGRID_SECRETE)
+sgMail.setApiKey('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')
 var cors = require("cors");
+const creds = require("./config");
 
 router.post("/send", (req, res, next) => {
   var name = req.body.name;
